@@ -1,0 +1,17 @@
+{
+  "name": "ota-log-analyzer",
+  "version": "1.0.0",
+  "description": "OTA Security Event Log Analyzer — Phase 1: schema + seed data",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "seed": "node src/seed.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "mysql2": "^3.11.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}
