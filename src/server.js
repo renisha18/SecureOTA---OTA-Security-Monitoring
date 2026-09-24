@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const pool = require('./db');
+const eventsRouter = require('./routes/events');
+const anomaliesRouter = require('./routes/anomalies');
 
 const app = express();
 app.use(cors());
@@ -11,12 +13,14 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Quick sanity check that seeding worked — real /api/events and /api/anomalies
-// routes come in Phase 3.
+// Quick sanity check that seeding worked.
 app.get('/api/events/count', async (req, res) => {
   const [[{ total }]] = await pool.query('SELECT COUNT(*) AS total FROM events');
   res.json({ total });
 });
+
+app.use('/api/events', eventsRouter);
+app.use('/api/anomalies', anomaliesRouter);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
