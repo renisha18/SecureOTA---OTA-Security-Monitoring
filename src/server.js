@@ -4,6 +4,7 @@ const cors = require('cors');
 const pool = require('./db');
 const eventsRouter = require('./routes/events');
 const anomaliesRouter = require('./routes/anomalies');
+const analyzeRouter = require('./routes/analyze');
 
 const app = express();
 app.use(cors());
@@ -21,6 +22,7 @@ app.get('/api/events/count', async (req, res) => {
 
 app.use('/api/events', eventsRouter);
 app.use('/api/anomalies', anomaliesRouter);
+app.use('/api/analyze', analyzeRouter);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
