@@ -1,0 +1,145 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #f4f5f7;
+  color: #1a1a1a;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 { font-size: 22px; margin: 0; }
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+button:hover { background: #1d4ed8; }
+button:disabled { background: #93c5fd; cursor: not-allowed; }
+button.secondary { background: #6b7280; }
+button.secondary:hover { background: #4b5563; }
+
+.error-banner {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  border-top: 4px solid #d1d5db;
+}
+.card-total { border-top-color: #2563eb; }
+.card-critical { border-top-color: #dc2626; }
+.card-high { border-top-color: #ea580c; }
+.card-medium { border-top-color: #ca8a04; }
+
+.card-value { font-size: 28px; font-weight: 700; }
+.card-label { font-size: 12px; color: #6b7280; margin-top: 4px; }
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.tabs button {
+  background: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+.tabs button.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.filter-bar input, .filter-bar select {
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.data-table th, .data-table td {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 13px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.data-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+}
+.badge-info { background: #6b7280; }
+.badge-low { background: #16a34a; }
+.badge-medium { background: #ca8a04; }
+.badge-high { background: #ea580c; }
+.badge-critical { background: #dc2626; }
+
+.event-link {
+  background: #e5e7eb;
+  color: #1a1a1a;
+  padding: 2px 8px;
+  font-size: 11px;
+  margin-right: 4px;
+  border-radius: 4px;
+}
+.event-link:hover { background: #d1d5db; }
+
+.highlighted-row { background: #fef3c7; }
+
+.empty-state {
+  text-align: center;
+  color: #6b7280;
+  padding: 40px;
+}
